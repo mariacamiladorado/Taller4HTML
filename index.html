@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedrazul</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="validacion.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  
+  <script>
+    // Muestra la descripción de la especialidad seleccionada
+    function mostrarEspecialidad(titulo, texto) {
+      document.getElementById("tituloEspecialidad").innerText = titulo;
+      document.getElementById("textoEspecialidad").innerText = texto;
+      // La primera vez que se hace clic, quitamos la clase que la mantenía oculta
+      document.getElementById("descripcionEspecialidad").classList.remove("d-none");
+    }
+  </script>
+
+
+</head>
+<body>
+
+  <header class="bg-primary text-white text-center p-3">
+    <div class="container-fluid">
+            <div class="align-items-center">
+              <div class="profile-info">
+                <h1>Piedrazul</h1>
+                <p>Consulta de medicina alternativa</p>
+                           
+                
+                <div class="social-icons">
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  <a href="https://github.com/" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="mailto:contacto@piedrazul.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div> 
+    </div>
+</header>
+
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <div class="container-fluid">      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion1">Sección 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion2">Sección 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion3">Sección 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container-fluid mt-5" id="seccion1">
+    <h1>Sección 1</h1>      
+
+    <!-- Carrusel -->
+    <div id="carouselProductos" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.epssanitas.com/usuarios/documents/9441058/1103733116/13_08_bann_eps_sismo_desk.jpg" class="d-block w-100" alt="Promo 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.epssanitas.com/usuarios/documents/9441058/1103733116/28_08_ban_quejas_desk.jpg" class="d-block w-100" alt="Promo 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.epssanitas.com/usuarios/documents/9441058/1103733116/03_08_ban_gestores_farmaceuticos_desk.png" class="d-block w-100" alt="Promo 3">
+            </div>
+        </div>
+        <!-- Controles del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+
+  </div>
+
+  <div class="container-fluid" id="seccion2">
+    <h1>Sección 2</h1>
+    
+    <!-- Cuerpo principal con barra lateral y productos -->
+    <div class="row">
+
+        <!-- Barra lateral (Especialidades) -->
+        <aside class="col-12 col-sm-2 col-md-4">
+            <h2>Especialidades</h2>
+            <ul class="list-group" id="listaEspecialidades">
+                <li class="list-group-item">
+                  <a href="#" onclick="mostrarEspecialidad('Medicina General', 'Atención médica integral orientada al diagnóstico y tratamiento de las condiciones más comunes de nuestros pacientes, con enfoque preventivo.'); return false;">Medicina General</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#" onclick="mostrarEspecialidad('Fisioterapia', 'Conjunto de técnicas de rehabilitación física (ejercicios, masajes y electroterapia) orientadas a recuperar y mantener la funcionalidad del cuerpo tras una lesión o enfermedad.'); return false;">Fisioterapia</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#" onclick="mostrarEspecialidad('Terapia Neural', 'Técnica terapéutica que busca restablecer el equilibrio del sistema nervioso mediante la aplicación de microdosis de anestésicos locales en puntos específicos, aliviando dolores crónicos e inflamaciones.'); return false;">Terapia Neural</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#" onclick="mostrarEspecialidad('Quiropraxia', 'Disciplina enfocada en el diagnóstico y tratamiento manual de trastornos del sistema musculoesquelético, en especial de la columna vertebral, para mejorar la movilidad y aliviar el dolor.'); return false;">Quiropraxia</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#" onclick="mostrarEspecialidad('Nutrición y Dietética', 'Especialidad encargada de diseñar planes alimenticios personalizados para prevenir y tratar enfermedades, mejorando la salud y calidad de vida del paciente a través de la alimentación.'); return false;">Nutrición y Dietética</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Cartas de los médicos -->
+        <main class="col-12 col-sm-10 col-md-8">
+
+            <h2>Médicos</h2>
+
+            <!-- Descripción de la especialidad seleccionada (oculta hasta que el usuario haga clic) -->
+            <div id="descripcionEspecialidad" class="alert alert-info d-none" role="alert">
+              <h4 id="tituloEspecialidad"></h4>
+              <p id="textoEspecialidad" class="mb-0"></p>
+            </div>
+
+    <div class="row g-3" id="contenedorMedicos">
+                <!-- Médico 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border">
+                        <img src="https://media.istockphoto.com/id/500671532/es/foto/hombre-sonriente-m%C3%A9dico-en-abrigo-blanco.jpg?s=612x612&w=0&k=20&c=W2zdpR2UgGLHehyCsBV-DogEexDiGZo80OGmDrYa4Rk=" class="card-img-top img-fluid" alt="Médico 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Andrés Gómez</h5>
+                            <p class="card-text mb-1"><strong>Medicina General</strong></p>
+                            <p class="card-text text-muted small">Me apasiona acompañar a mis pacientes en el cuidado preventivo de su salud.</p>
+                            <button class="btn btn-primary">Agendar cita</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Médico 2 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border">
+                        <img src="https://media.istockphoto.com/id/525059775/es/foto/sonriente-mujer-m%C3%A9dico.jpg?s=612x612&w=0&k=20&c=Du2H5N-6uLwu6MY_w8-F3QuCTaHmqhlM3wi0aNbBRZs=" class="card-img-top img-fluid" alt="Médico 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Dra. Laura Pérez</h5>
+                            <p class="card-text mb-1"><strong>Quiropraxia</strong></p>
+                            <p class="card-text text-muted small">Trabajo para devolver la movilidad y el bienestar a través de técnicas manuales.</p>
+                            <button class="btn btn-primary">Agendar cita</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Médico 3 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border">
+                        <img src="https://media.istockphoto.com/id/479378798/es/foto/retrato-de-mujer-m%C3%A9dico.jpg?s=612x612&w=0&k=20&c=Q-_ggCdXeHOUqTj8CaUseV1MmmyYk8OdV7YbeOoWhD4=" class="card-img-top img-fluid" alt="Médico 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Dra. Camila Rojas</h5>
+                            <p class="card-text mb-1"><strong>Fisioterapia</strong></p>
+                            <p class="card-text text-muted small">Ayudo a mis pacientes a recuperar su funcionalidad después de una lesión.</p>
+                            <button class="btn btn-primary">Agendar cita</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Médico 4 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/035/640/269/small/ai-generated-professional-pharmacist-in-white-background-photo.jpg" class="card-img-top img-fluid" alt="Médico 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Julián Torres</h5>
+                            <p class="card-text mb-1"><strong>Nutrición y Dietética</strong></p>
+                            <p class="card-text text-muted small">Diseño planes de alimentación personalizados para mejorar la calidad de vida.</p>
+                            <button class="btn btn-primary">Agendar cita</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Médico 5 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border">
+                        <img src="https://pro.doctoralia.com.mx/hs-fs/hubfs/Imported_Blog_Media/Dra_%20Perla%20Gpe_%20Hern%C3%A1ndez%20Salcedo%20ganadora%20endocrinolog%C3%ADa.jpeg?width=400&height=400&name=Dra_%20Perla%20Gpe_%20Hern%C3%A1ndez%20Salcedo%20ganadora%20endocrinolog%C3%ADa.jpeg" class="card-img-top img-fluid" alt="Médico 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Dra. Perla Hernández</h5>
+                            <p class="card-text mb-1"><strong>Terapia Neural</strong></p>
+                            <p class="card-text text-muted small">Busco aliviar el dolor crónico abordando el sistema nervioso de forma integral.</p>
+                            <button class="btn btn-primary">Agendar cita</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Médico 6 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border">
+                        <img src="https://png.pngtree.com/png-vector/20230928/ourmid/pngtree-young-afro-professional-doctor-png-image_10148632.png" class="card-img-top img-fluid" alt="Médico 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Kevin Martínez</h5>
+                            <p class="card-text mb-1"><strong>Terapia Neural</strong></p>
+                            <p class="card-text text-muted small">Acompaño procesos de rehabilitación con un enfoque humano y cercano.</p>
+                            <button class="btn btn-primary">Agendar cita</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </main>
+
+    </div>
+
+  </div>
+
+  <div class="container-fluid" id="seccion3">
+    <h1>Sección 3</h1> 
+      <h2 class="text-center mb-4">Formulario para el envío de solicitud de contacto </h2>
+      <p class="lead">
+          Ingrese sus datos para registrarse en Piedrazul y poder agendar sus citas médicas con nuestros especialistas.
+      </p>
+  
+      <form id="formularioContacto" onsubmit="return validarFormulario()">
+          
+          <!-- Tipo de Identificación -->
+          <div class="mb-3">
+              <label for="identificacion" class="form-label">Tipo de Identificación:</label>
+              <select id="identificacion" name="tipo-identificacion" class="form-select">
+                  <option value="" disabled selected>Seleccione un tipo de identificación</option>
+                  <option value="cc">Cédula de Ciudadanía</option>
+                  <option value="ti">Tarjeta de Identidad</option>
+                  <option value="ce">Cédula de Extranjería</option>
+                  <option value="pas">Pasaporte</option>
+              </select>
+              <label class="text-danger form-text" id="errorTipoIdentificacion"></label><br>
+          </div>    
+          
+          <div class="mb-3">
+              <label for="numero-identificacion" class="form-label">Número de Identificación:</label>
+              <input type="text" id="numero-identificacion" name="numero-identificacion" class="form-control" placeholder="Número de identificación">
+              <label class="text-danger form-text" id="errorNumeroIdentificacion"></label><br>
+          </div>    
+          
+          <div class="mb-3">
+              <label for="nombres" class="form-label">Nombres:</label>
+              <input type="text" id="nombres" name="nombres" class="form-control" placeholder="Nombres del usuario">
+              <label class="text-danger form-text" id="errorNombres"></label><br>
+          </div>    
+          
+          <div class="mb-3">
+              <label for="apellidos" class="form-label">Apellidos:</label>
+              <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos del usuario" >
+              <label class="text-danger form-text" id="errorApellidos"></label><br>
+          </div>    
+          
+          <div class="mb-3">
+              <label for="correo-electronico" class="form-label">Correo Electrónico:</label>
+              <input type="email" id="correo-electronico" name="correo-electronico" class="form-control" placeholder="correo@ejemplo.com" >
+              <label class="text-danger form-text" id="errorCorreo"></label><br>
+          </div>    
+          
+          <fieldset class="mb-3">
+              <legend class="form-label">Género:</legend>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="femenino" name="genero" value="femenino" >
+                  <label class="form-check-label" for="femenino">Femenino</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="masculino" name="genero" value="masculino">
+                  <label class="form-check-label" for="masculino">Masculino</label>
+              </div>
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="otro" name="genero" value="otro">
+                  <label class="form-check-label" for="otro">Otro</label>
+              </div>
+              <label class="text-danger form-text" id="errorGenero"></label><br>
+          </fieldset>
+              
+          <div class="mb-3">
+              <label for="fecha-nacimiento" class="form-label">Fecha de Nacimiento:</label>
+              <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" class="form-control" > 
+              <label class="text-danger form-text d-block" id="errorFechaNacimiento"></label>               
+          </div>
+
+          <!-- Contrasena: dato que permite al usuario confirmar su registro -->
+        <div class="mb-3">
+          <label for="clave" class="form-label">Contraseña:</label>
+          <input type="password" id="clave" name="clave" class="form-control"
+            placeholder="Mínimo 8 caracteres, con letras y números">
+          <label class="text-danger form-text d-block" id="errorClave"></label>
+        </div>
+
+        <div class="mb-3">
+          <label for="confirmar-clave" class="form-label">Confirmar contraseña:</label>
+          <input type="password" id="confirmar-clave" name="confirmar-clave" class="form-control"
+            placeholder="Escriba de nuevo su contraseña">
+          <label class="text-danger form-text d-block" id="errorConfirmarClave"></label>
+        </div>
+          
+          <div class="d-flex justify-content-start">
+              <button type="submit" id="btnRegistrar" class="btn btn-primary">Registrar</button>
+          </div>
+    </form>  
+  </div>
+
+  <footer class="mt-5 text-center text-lg-start" style="background-color: #160a711c;">
+    <div class="container d-flex justify-content-center py-5">
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook"
+        class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #092dcf;">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener" title="YouTube"
+          class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #e71919; border:none;">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>  
+    
+    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2026 Copyright:
+      <a class="text-white" href="https://www.unicauca.edu.co/">Piedrazul</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  
+
+</body>
+</html>
+
